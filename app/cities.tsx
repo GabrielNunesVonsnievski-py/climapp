@@ -8,14 +8,13 @@ const Cities = () => {
         <LinearGradient colors={["#00457D", "#05051F"]} style={styles.container}>
             <ScrollView >
                 <View style={styles.scrollList}>
-                    {
-                        citiesData.map(city => (
-                            <View style={styles.listItem}>
-                                <Image source={require("../assets/images/Vector.png")} style={styles.cityImage}/>
-                                <Text style={styles.cityName}>{city.city}</Text>
-                                <Text style={styles.cityTemp}>{city.temp}º</Text>
-                            </View>
-                        ))
+                    {citiesData.map(city => (
+                        <View key={city.city} style={styles.listItem}>
+                            <Image source={require("../assets/images/Vector.png")} style={styles.cityImage} />
+                            <Text style={styles.cityName}>{city.city.replace(",", " - ")}</Text>
+                            <Text style={styles.cityTemp}>{city.temp}º</Text>
+                        </View>
+                    ))
                     }
                 </View>
             </ScrollView>
@@ -24,15 +23,15 @@ const Cities = () => {
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         paddingHorizontal: 16,
         gap: 16
     },
-    scrollList:{
+    scrollList: {
         gap: 16
     },
-    listItem:{
+    listItem: {
         height: 63,
         width: "100%",
         backgroundColor: "rgb(255,255,255, 0.15)",
@@ -42,17 +41,17 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         paddingHorizontal: 16
     },
-    cityName:{
+    cityName: {
         color: '#FFFF',
         fontSize: 16,
         fontFamily: 'Montserrat_500Medium'
     },
-    cityTemp:{
+    cityTemp: {
         color: '#FFF',
         fontSize: 25,
         fontFamily: "Montserrat_700Bold"
     },
-    cityImage:{
+    cityImage: {
         width: 27,
         height: 24
     }
