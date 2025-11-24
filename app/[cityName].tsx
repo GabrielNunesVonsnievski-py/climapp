@@ -93,7 +93,6 @@ const CityDetails = () => {
                     </View>
                 </View>
             </ScrollView>
-
         </LinearGradient>
     );
 };
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
     card: {
         width: "100%",
         borderRadius: 24,
-        backgroundColor: "#4463D5",
+        backgroundColor: "#4463D580",
         padding: 16,
         gap: 24,
     },

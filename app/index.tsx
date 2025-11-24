@@ -12,7 +12,7 @@ export default function Index() {
 
       <TouchableOpacity onPress={() => { router.push("/cities") }} style={styles.button}>
         <Text style={styles.buttonTitle}>Entrar</Text>
-        <Ionicons name='arrow-forward' size={24} color={"#01080E"}/>
+        <Ionicons name='arrow-forward' size={24} color={"#FFFFFF"}/>
       </TouchableOpacity>
     </LinearGradient>
   )
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   button:{
     width: "100%",
     height: 40,
-    backgroundColor:"#7693FF",
+    backgroundColor:"#7693FF80",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 32,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     gap: 8
   },
   buttonTitle:{
-    color: "#01080E",
+    color: "#FFF",
     fontSize: 20,
     fontWeight: '600',
     fontFamily: "Montserrat_600Semibold"
