@@ -86,7 +86,7 @@ const CityDetails = () => {
                             <View key={day.date} style={styles.weekBox}>
                                 <Text style={styles.weekTextTitle}>{day.weekday}</Text>
                                 <Text style={styles.textDate}>({day.date}) {'\n'}</Text>
-                                <Image source={require("../assets/images/Vector.png")} style={styles.weekCardeekCard}/>
+                                <Image source={require("../assets/images/Vector.png")}/>
                                 <Text style={styles.weekText}> {day.max}/{day.min}º</Text>
                             </View>
                         ))}
