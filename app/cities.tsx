@@ -12,7 +12,7 @@ const Cities = () => {
     const router = useRouter()
 
     useEffect(() => {
-        console.log(search)
+        // console.log(search)
         const newFilteredCities = citiesData.filter((city) => city.city.toLocaleLowerCase().includes(search.toLowerCase()))
 
         setFilteredCities(newFilteredCities)
