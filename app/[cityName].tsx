@@ -29,7 +29,13 @@ const CityDetails = () => {
 
     if(!cityDetails){
         return(
-        <LinearGradient colors={["#00457D", "#05051F"]} style={styles.container}/>
+        <LinearGradient colors={["#00457D", "#05051F"]} style={styles.container}>
+            <View style={styles.loadingView}>
+                <Text style={styles.loadingText}>
+                    Carregando...
+                </Text>
+            </View>
+        </LinearGradient>
         )
     }
 
@@ -121,8 +127,8 @@ const styles = StyleSheet.create({
         zIndex: 10,
     },
     cardImage:{
-        width: 72,
-        height: 64
+        width: 92,
+        height: 84
     },
     cardTemperature:{
         color: '#FFF',
@@ -135,7 +141,6 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontFamily: 'Montserrat_400Regular',
         textAlign: 'center'
-
     },
     cardBox:{
         alignItems: 'center',
@@ -159,6 +164,16 @@ const styles = StyleSheet.create({
     },
     rowBox:{
         gap: 8
+    },
+    loadingView:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    loadingText:{
+        color: '#FFF',
+        fontSize: 24,
+        fontFamily: 'Montserra_700Bold'
     }
 });
 

@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
         fontFamily: "Montserrat_700Bold"
     },
     cityImage: {
-        width: 27,
-        height: 24
+        width: 47,
+        height: 44
     },
     inputContainer:{
         height: 46,
