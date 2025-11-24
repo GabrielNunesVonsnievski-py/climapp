@@ -1,17 +1,19 @@
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import citiesData from "../data/cities.json"
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useEffect, useState } from "react";
+import { useRouter } from "expo-router";
+import citiesData from "../data/cities.json"
 
 
 const Cities = () => {
     const [search, setSearch] = useState("");
     const [filteredCities, setFilteredCities] = useState(citiesData)
+    const router = useRouter()
 
     useEffect(() => {
         console.log(search)
-        const newFilteredCities = citiesData.filter(city => city.city.toLocaleLowerCase().includes(search.toLowerCase()))
+        const newFilteredCities = citiesData.filter((city) => city.city.toLocaleLowerCase().includes(search.toLowerCase()))
 
         setFilteredCities(newFilteredCities)
     }, [search]);
@@ -36,15 +38,17 @@ const Cities = () => {
 
             <ScrollView >
                 <View style={styles.scrollList}>
-                    {filteredCities.map(city => (
-                        <View key={city.city} style={styles.listItem}>
+                    {filteredCities.map((city) => (
+                        <TouchableOpacity onPress={() => {
+                            router.push(`/${city.city}`)
+                        }} key={city.city} style={styles.listItem}>
                             <Image
                                 source={require("../assets/images/Vector.png")}
                                 style={styles.cityImage}
                             />
                             <Text style={styles.cityName}>{city.city.replace(",", " - ")}</Text>
                             <Text style={styles.cityTemp}>{city.temp}º</Text>
-                        </View>
+                        </TouchableOpacity>
                     ))
                     }
                 </View>
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 16,
-        gap: 16,
+        gap: 40,
         paddingTop: 40
     },
     scrollList: {
